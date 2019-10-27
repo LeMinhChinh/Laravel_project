@@ -12,15 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('home.home');
+    return redirect()->route('user.home');
 });
 
 Route::group([
     'prefix' => 'user',
     'as' => 'user.',
-    'namespace' => 'User'
+    'namespace' => 'Home'
 ], function () {
-    Route::get('logout','UserController@login')->name('logout');
+    Route::get('/','HomeController@home')->name('home');
 });
 Route::group([
     'prefix' => 'admin',
@@ -29,7 +29,7 @@ Route::group([
 ], function(){
     Route::get('login','UserController@login')->name('login');
     Route::post('admin-login', 'UserController@handleLogin')->name('handleLogin');
-    Route::post('admin-logout', 'LoginController@handleLogout')->name('handleLogout');
+    Route::post('admin-logout', 'UserController@handleLogout')->name('handleLogout');
     Route::get('register','UserController@register')->name('register');
     Route::post('admin-register','UserController@handleRegister')->name('handleRegister');
     Route::get('admin-logout','UserController@handleLogout')->name('handleLogout');
@@ -46,5 +46,4 @@ Route::group([
     Route::get('/create-post', 'PostsController@createPost')->name('createPost');
     Route::get('/category','CategoriesController@index')->name('category');
     Route::get('/tag','TagsController@index')->name('tag');
-    Route::get('/user','UsersController@index')->name('user');
 });

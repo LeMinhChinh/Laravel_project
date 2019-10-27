@@ -15,7 +15,7 @@ class User extends Model
         $info = User::select('*')
                     ->where([
                         'email' => $user,
-                        'password' => $pass,
+                        'password' => md5($pass),
                         'status' => 1
                     ])
                     ->first();

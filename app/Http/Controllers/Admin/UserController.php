@@ -71,7 +71,7 @@ class UserController extends Controller
 
         $registerUser = [
             'username' => $username,
-            'password' =>  $password,
+            'password' =>  md5($password),
             'email' => $email,
             'fullname' => $fullname,
             'phone' => $phone,
@@ -81,7 +81,6 @@ class UserController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' =>null
         ];
-        dd($registerUser);
         $confirmUser = $user->registerUser($registerUser);
 
         if($confirmUser){

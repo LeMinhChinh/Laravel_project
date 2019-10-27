@@ -11,52 +11,21 @@
                 </div>
                 <div class="ctboxleft">
                     <ul class="mnboxl">
+                        @foreach ($lstCate as $cate)
                         <li>
-                            <a href="">Laptop</a>
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            <ul class="mnboxl_1">
-                                <li><a href="">Laptop Dell</a></li>
-                                <li><a href="">Laptop Asus</a></li>
-                                <li><a href="">Laptop HP</a></li>
-                                <li><a href="">Laptop Lenovo</a></li>
-                                <li><a href="">Laptop Acer</a></li>
-                                <li><a href="">Laptop MSI</a></li>
-                                <li><a href="">Laptop Razer</a></li>
-                                <li><a href="">Laptop Samsung</a></li>
-                                <li><a href="">Laptop Microsoft</a></li>
-                                <li><a href="">Apple</a></li>
-                            </ul>
+                                <a href="">{{ $cate['type'] }}</a>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                                    <ul class="mnboxl_1">
+                                        @foreach ($lstName as $name)
+                                            @if($cate['id'] == $name['id_type'])
+                                                <li><a href="">{{ $name['name_cate'] }}</a></li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+
                         </li>
-                        <li>
-                            <a href="">Máy tính văn phòng</a>
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            <ul class="mnboxl_1">
-                                <li><a href="">PC Dell</a></li>
-                                <li><a href="">PC Asus</a></li>
-                                <li><a href="">PC HP</a></li>
-                                <li><a href="">PC Lenovo</a></li>
-                                <li><a href="">PC Acer</a></li>
-                                <li><a href="">PC MSI</a></li>
-                                <li><a href="">PC Razer</a></li>
-                                <li><a href="">PC Samsung</a></li>
-                                <li><a href="">PC Microsoft</a></li>
-                                <li><a href="">PC Apple</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="">Máy tính chơi game</a>
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            <ul class="mnboxl_1">
-                                <li><a href="">PC Game net</a></li>
-                                <li><a href="">PC Phổ thông</a></li>
-                                <li><a href="">PC Trung cấp</a></li>
-                                <li><a href="">PC Cao cấp</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Màn hình máy tính</a></li>
-                        <li><a href="">Gaming Gear</a></li>
-                        <li><a href="">Linh phụ kiện</a></li>
-                        <li><a href="">Thiết bị mạng</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -196,137 +165,32 @@
         <div id="maincontent" class="col-xs-12 col-sm-8 col-md-9">
             <div class="boxmain spmoi">
                 <div class="tit-boxmain">
-                    <h3><span>Sản phẩm mới</span></h3>
+                    <h3><span>Laptop Mới</span></h3>
                 </div>
                 <div class="ct-boxmain">
                     <div class="row">
                         <div id="spmoi" class="owl-carousel">
-                            <div class="item">
-                                <div class="boxsp">
-                                    <div class="imgsp">
-                                        <a href=""><img class="imgproduct" src="home/images/img1.jpg"></a>
-                                        <div class="img-label">
-                                            <img src="home/images/hot.png">
+                            @foreach ($lstHotProduct as $hotPr)
+                                <div class="item">
+                                    <div class="boxsp">
+                                        <div class="imgsp">
+                                            <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Image/product/laptop/{{ $hotPr['image'] }}" style="height:190px"></a>
+                                            <div class="img-label">
+                                                <img src="home/images/hot.png">
+                                            </div>
+                                        </div>
+                                        <div class="namesp">
+                                            <a href="">{{ $hotPr['name'] }}</a>
+                                        </div>
+                                        <div class="pricesp"><span>Giá bán: </span>{{ number_format($hotPr['price'] ,0 ,'.' ,'.').' đ' }}</div>
+                                        <div class="pricesp-promo">Giảm giá:<span>{{ number_format($hotPr['price'] ,0 ,'.' ,'.').' đ' }}</span></div>
+                                        <div class="button-hd">
+                                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
-                                    <div class="namesp">
-                                        <a href="">SoundMAGIC PL30+</a>
-                                    </div>
-                                    <div class="pricesp">499.000 Đ</div>
-                                    <div class="button-hd">
-                                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                        <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="boxsp">
-                                    <div class="imgsp">
-                                        <a href=""><img class="imgproduct" src="home/images/img1.jpg"></a>
-                                        <div class="img-label">
-                                            <img src="home/images/hot.png">
-                                        </div>
-                                    </div>
-                                    <div class="namesp">
-                                        <a href="">SoundMAGIC PL30+</a>
-                                    </div>
-                                    <div class="pricesp">499.000 Đ</div>
-                                    <div class="button-hd">
-                                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                        <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="boxsp">
-                                    <div class="imgsp">
-                                        <a href=""><img class="imgproduct" src="home/images/img1.jpg"></a>
-                                        <div class="img-label">
-                                            <img src="home/images/hot.png">
-                                        </div>
-                                    </div>
-                                    <div class="namesp">
-                                        <a href="">SoundMAGIC PL30+</a>
-                                    </div>
-                                    <div class="pricesp">499.000 Đ</div>
-                                    <div class="button-hd">
-                                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                        <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="boxsp">
-                                    <div class="imgsp">
-                                        <a href=""><img class="imgproduct" src="home/images/img1.jpg"></a>
-                                        <div class="img-label">
-                                            <img src="home/images/hot.png">
-                                        </div>
-                                    </div>
-                                    <div class="namesp">
-                                        <a href="">SoundMAGIC PL30+</a>
-                                    </div>
-                                    <div class="pricesp">499.000 Đ</div>
-                                    <div class="button-hd">
-                                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                        <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="boxsp">
-                                    <div class="imgsp">
-                                        <a href=""><img class="imgproduct" src="home/images/img1.jpg"></a>
-                                        <div class="img-label">
-                                            <img src="home/images/hot.png">
-                                        </div>
-                                    </div>
-                                    <div class="namesp">
-                                        <a href="">SoundMAGIC PL30+</a>
-                                    </div>
-                                    <div class="pricesp">499.000 Đ</div>
-                                    <div class="button-hd">
-                                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                        <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="boxsp">
-                                    <div class="imgsp">
-                                        <a href=""><img class="imgproduct" src="home/images/img1.jpg"></a>
-                                        <div class="img-label">
-                                            <img src="home/images/hot.png">
-                                        </div>
-                                    </div>
-                                    <div class="namesp">
-                                        <a href="">SoundMAGIC PL30+</a>
-                                    </div>
-                                    <div class="pricesp">499.000 Đ</div>
-                                    <div class="button-hd">
-                                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                        <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="boxsp">
-                                    <div class="imgsp">
-                                        <a href=""><img class="imgproduct" src="home/images/img1.jpg"></a>
-                                        <div class="img-label">
-                                            <img src="home/images/hot.png">
-                                        </div>
-                                    </div>
-                                    <div class="namesp">
-                                        <a href="">SoundMAGIC PL30+</a>
-                                    </div>
-                                    <div class="pricesp">499.000 Đ</div>
-                                    <div class="button-hd">
-                                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                        <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

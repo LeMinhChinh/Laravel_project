@@ -6,7 +6,7 @@
         </div>
         <div class="col-3 col-md-3 col-xs-3 col-sm-3 login">
             @if(null!==Session::get('emailSession'))
-                <li style="width:50%"><a href="{{ route('admin.login') }}" >Xin chào <b>{{ Session::get('userSession') }}</b></a></li>
+                <li style="width:60%"><a href="{{ route('admin.login') }}" >Xin chào <b>{{ Session::get('userSession') }}</b></a></li>
                 <li><a href="{{ route('admin.handleLogout') }}" >Đăng xuất</a></li>
             @else()
                 <li style="width:30%"><a href="{{ route('admin.login') }}" >Đăng nhập</a></li>
