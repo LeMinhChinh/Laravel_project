@@ -21,6 +21,7 @@ Route::group([
     'namespace' => 'Home'
 ], function () {
     Route::get('/','HomeController@home')->name('home');
+    Route::get('detailProduct','ProductController@detail')->name('detailProduct');
 });
 Route::group([
     'prefix' => 'admin',

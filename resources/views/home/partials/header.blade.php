@@ -1,7 +1,7 @@
 <div class="topbar">
     <div class="container">
         <div class="col-9 col-md-9 col-xs-9 col-sm-9 p0 hotline-top">
-            <img src="home/images/phone-24.png" alt="hotline"/>
+            <img src="../home/images/phone-24.png" alt="hotline"/>
             <p>Điện thoại: <a href="tel:032.777.5252">032.777.5252</a></p>
         </div>
         <div class="col-3 col-md-3 col-xs-3 col-sm-3 login">
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="col-xs-12 col-md-4">
             <div id="logo">
-                <a href=""><img src="home/images/logoo.jpg" alt=""></a>
+                <a href="{{ route('user.home') }}"><img src="../home/images/logoo.jpg" alt=""></a>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">

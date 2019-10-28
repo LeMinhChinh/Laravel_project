@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CateController extends Controller
+class ProductController extends Controller
 {
-    public function category(Request $request, Category $cate)
+    public function detail()
     {
-
+        return view('home.product.detail');
     }
 }

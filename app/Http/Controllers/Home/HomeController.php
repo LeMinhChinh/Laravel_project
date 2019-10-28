@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Home;
 use App\Models\Category;
 use App\Models\Trademark;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
-    public function home(Request $request, Home $home, Category $cate, Trademark $trade)
+    public function home(Request $request, Category $cate, Trademark $trade, Product $product)
     {
         $data = [];
-        $lstHotProduct = $home->getAllDataByCreateAt();
+        $lstHotProduct = $product->getAllDataByCreateAt();
         $lstHotProduct = json_decode(json_encode($lstHotProduct),true);
 
         $lstCate = $cate->getAllDataCate();
@@ -22,10 +22,18 @@ class HomeController extends Controller
         $lstName = $cate->getDataName();
         $lstName = json_decode(json_encode($lstName),true);
 
+        $lstLaptop = $product->getAllDataLaptop();
+        $lstLaptop = json_decode(json_encode($lstLaptop),true);
+        // dd($lstLaptop);
+        $lstPC = $product->getAllDataPC();
+        $lstPC = json_decode(json_encode($lstPC),true);
+
         $data['lstHotProduct'] = $lstHotProduct;
         $data['lstCate'] = $lstCate;
         $data['lstName'] = $lstName;
+        $data['lstLaptop'] = $lstLaptop;
+        $data['lstPC'] = $lstPC;
 
-        return view('home.home',$data);
+        return view('home.home.page',$data);
     }
 }

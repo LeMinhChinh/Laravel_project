@@ -1,4 +1,4 @@
-{{-- @extends('home.layouts.homeview')
+@extends('home.layouts.homeview')
 @section('title', "Home")
 @section('content')
 
@@ -201,4 +201,4 @@
         </div>
     </section>
 
-@endsection --}}
+@endsection
