@@ -20,8 +20,8 @@ Route::group([
     'as' => 'user.',
     'namespace' => 'Home'
 ], function () {
-    Route::get('/','HomeController@home')->name('home');
-    Route::get('detailProduct','ProductController@detail')->name('detailProduct');
+    Route::get('/homepage','HomeController@home')->name('home');
+    Route::get('/detailProduct/{id}','ProductController@detail')->name('detailProduct');
 });
 Route::group([
     'prefix' => 'admin',

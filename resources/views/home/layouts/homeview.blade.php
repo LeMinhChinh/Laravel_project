@@ -9,6 +9,9 @@
 </head>
 <body>
 <header id="header">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v4.0"></script>
+    <div class="wrap">
     @include('home.partials.header')
     @include('home.partials.nav')
 

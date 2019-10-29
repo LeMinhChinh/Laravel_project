@@ -9,6 +9,14 @@ class Product extends Model
 {
     protected $table = 'product';
 
+    public function getAllData()
+    {
+        $data = DB::table('product AS p')
+                    ->select('p.*')
+                    ->get();
+        return $data;
+    }
+
     public function getAllDataByCreateAt()
     {
         $data = DB::table('product AS p')

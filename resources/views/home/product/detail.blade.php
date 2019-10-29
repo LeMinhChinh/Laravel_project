@@ -1,61 +1,99 @@
 @extends('home.layouts.homeview')
-@section('title','detail')
+@section('title','detailProduct')
 @section('content')
-    {{-- <div class="container">
-        <div>
-            <span>Trang chủ / </span><span>Laptop / </span><span>Laptop Dell</span>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="https://phucanhcdn.com/media/product/36644_xps_15_7590_siliver_ha3.jpg" alt="">
-            </div>
-            <div class="col-md-8">
-                <p>Laptop Dell Inspiron 5480 X6C893 (i5 8265U/8GB RAM/256GB SSD/Geforce MX250 2GB/14" FHD IPS/Win 10)</p>
-            </div>
-        </div>
-    </div> --}}
     <div class="container">
-        <div style="margin-top:20px">
-            <span>Trang chủ / </span><span>Laptop / </span><span>Laptop Dell</span>
+        <div style="margin-top:20px" class="title-detail">
+            <a href="{{ route('user.home') }}">Trang chủ / </a><a href="">{{ $detailPr['type'] }} / </a><a href="" style="color:red">{{ $detailPr['name_type'] }}</a>
         </div>
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-md-6">
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane active" id="pic-1"><img src="{{ URL::to('/') }}/Image/product/laptop/{{ $detailPr['image'] }}" /></div>
 						</div>
 					</div>
 					<div class="details col-md-6">
-						<h3 class="product-title">men's shoes fashion</h3>
+						<h3 class="product-title">{{ $detailPr['name'] }}</h3>
 						<div class="rating">
-							<div class="stars">
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							</div>
-							<span class="review-no">41 reviews</span>
-						</div>
-						<p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-						<h4 class="price">current price: <span>$180</span></h4>
-						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-						<h5 class="sizes">sizes:
-							<span class="size" data-toggle="tooltip" title="small">s</span>
-							<span class="size" data-toggle="tooltip" title="medium">m</span>
-							<span class="size" data-toggle="tooltip" title="large">l</span>
-							<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-						</h5>
-						<h5 class="colors">colors:
-							<span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-							<span class="color green"></span>
-							<span class="color blue"></span>
-						</h5>
+                            <p class="review-no">Kho hàng : <span style="color:#ffa53f">Còn hàng</span></p>
+                        </div>
+                        <div>
+                            <p class="product-title">Thông số sản phẩm</p>
+                            <ul>
+                                <li>Bộ vi xử lí : {{ $detailPr['cpu'] }}</li>
+                                <li>Ram : {{ $detailPr['ram'] }}</li>
+                                <li>Hard drive : {{ $detailPr['hard_drive'] }}</li>
+                                <li>Màn hình : {{ $detailPr['screen'] }}</li>
+                                <li>Hệ điều hành : {{ $detailPr['operating_system'] }}</li>
+                            </ul>
+                        </div>
+                        <div style="width:80%">
+                            <table class="table table-borderless table-light table-bordered" style="background-color:#f0f0f0;border-radius:5px">
+                                <tbody>
+                                  <tr class="table-active">
+                                    <td style="width:35%;height:50px">Giá bán</td>
+                                    <td>{{ number_format($detailPr['price'] ,0 ,'.' ,'.').'' }}&#8363;</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:35%;height:50px">Giá khuyến mãi</td>
+                                    <td>{{ number_format($detailPr['promo_price'] ,0 ,'.' ,'.').'' }}&#8363;</td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2" style="width:35%;height:50px;text-align:center">Giảm giá tới {{ $detailPr['percent'] }}%</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Bảo hành : Chính hãng 12 tháng, đổi mới 30 ngày</p>
                     </div>
 
 				</div>
 			</div>
-		</div>
+        </div>
+        <div style="margin-top:40px">
+            <h2 class="product-title">Thông số kĩ thuật</h2>
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <td style="width:20%;height:20px">Ram</td>
+                        <td>{{ $detailPr['ram'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Cpu</td>
+                        <td>{{ $detailPr['cpu'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Bộ nhớ trong</td>
+                        <td>{{ $detailPr['hard_drive'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Màu sắc</td>
+                        <td>{{ $detailPr['color'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Màn hình</td>
+                        <td>{{ $detailPr['screen'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Hệ điều hành</td>
+                        <td>{{ $detailPr['operating_system'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kích thước</td>
+                        <td>{{ $detailPr['size'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Dung lượng pin</td>
+                        <td>{{ $detailPr['battery'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Cân nặng</td>
+                        <td>{{ $detailPr['weight'] }}</td>
+                    </tr>
+                </tbody>
+                </table>
+        </div>
+        <div class="fb-comments" data-width="" data-numposts="5"></div>
 	</div>
 @endsection

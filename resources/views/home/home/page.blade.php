@@ -31,8 +31,8 @@
         <div class="col-xs-12 col-sm-8 col-md-9">
             <div class="slider-wrapper theme-default">
                 <div id="slider" class="nivoSlider">
-                    <a href=""><img src="home/images/acb.jpg" alt="" /></a>
-                    <a href=""><img src="home/images/abc.jpg" alt="" /></a>
+                    <a href=""><img src="../home/images/acb.jpg" alt="" /></a>
+                    <a href=""><img src="../home/images/abc.jpg" alt="" /></a>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
                                                 <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Image/product/pc/{{ $hotPr['image'] }}" style="height:190px"></a>
                                             @endif
                                             <div class="img-label">
-                                                <img src="home/images/new.png">
+                                                <img src="../home/images/new.png">
                                             </div>
                                         </div>
                                         <div class="namesp">
@@ -79,7 +79,7 @@
                                         @endif
                                         <div class="button-hd">
                                             {{-- <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>   --}}
-                                            <a href="{{ route('user.detailProduct') }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a href="{{ route('user.detailProduct',['id' => $hotPr['id']]) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">

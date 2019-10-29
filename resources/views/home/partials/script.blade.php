@@ -6,7 +6,7 @@
         $(".top-cart-content").css("display","none");
     });
 </script>
-<script src="home/lib/slider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+<script src="../home/lib/slider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(window).load(function() {
         $('#slider').nivoSlider();
@@ -14,7 +14,7 @@
 </script>
 
 <!-- Owl Carousel Assets -->
-<script src="home/lib/owlcarousel/owl.carousel.js"></script>
+<script src="../home/lib/owlcarousel/owl.carousel.js"></script>
 <script>
     $(document).ready(function() {
         $("#slider-tintuc").owlCarousel({
