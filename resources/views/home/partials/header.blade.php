@@ -5,9 +5,13 @@
             <p>Điện thoại: <a href="tel:032.777.5252">032.777.5252</a></p>
         </div>
         <div class="col-3 col-md-3 col-xs-3 col-sm-3 login">
-                @if(null!==Session::get('emailSession'))
-                    <li style="width:60%"><a href="{{ route('admin.login') }}" >Xin chào<b> {{ Session::get('userSession') }}</b></a></li>
-                    <li><a href="{{ route('admin.handleLogout') }}" style="">Đăng xuất</a></li>
+            @if(null!==Session::get('emailSession'))
+                @if (Session::get('roleSession') ==1)
+                    <li style="width:60%"><a href="{{ route('admin.dashboard') }}" >Xin chào - <b> {{ Session::get('userSession') }}</b></a></li>
+                @elseif(Session::get('roleSession') ==0)
+                    <li style="width:60%"><a href="{{ route('user.userpage') }}" >Hello - <b> {{ Session::get('userSession') }}</b></a></li>
+                @endif
+                <li><a href="{{ route('admin.handleLogout') }}" style="">Đăng xuất</a></li>
             @else()
                 <li style="width:30%"><a href="{{ route('admin.login') }}">Đăng nhập</a></li>
                 <li><a href="{{ route('admin.register') }}" >Đăng kí</a></li>

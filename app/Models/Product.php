@@ -34,6 +34,7 @@ class Product extends Model
         $data = DB::table('product AS p')
                     ->select('p.*','tt.id_type')
                     ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
+                    ->join('type_product AS tp','tp.id','=','tt.id_type')
                     ->where('tt.id_type',1)
                     ->take(8)
                     ->get();
@@ -45,8 +46,21 @@ class Product extends Model
         $data = DB::table('product AS p')
                     ->select('p.*','tt.id_type')
                     ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
+                    ->join('type_product AS tp','tp.id','=','tt.id_type')
                     ->where('tt.id_type',2)
                     ->take(8)
+                    ->get();
+        return $data;
+    }
+
+    public function getAllProductByIdType($idtype)
+    {
+        $data = DB::table('product AS p')
+                    ->select('p.*','tp.id AS id_type','tp.type')
+                    ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
+                    ->join('type_product AS tp','tp.id','=','tt.id_type')
+                    ->where('tp.id',$idtype)
+                    // ->paginate(12);
                     ->get();
         return $data;
     }

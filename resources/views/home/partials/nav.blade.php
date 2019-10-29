@@ -1,7 +1,7 @@
 <nav id="mainmenu" class="hidden-xs hidden-sm ">
     <div class="container">
         <ul class="x1">
-            <li><a href="">Trang chủ</a></li>
+            <li><a href="{{ route('user.home') }}">Trang chủ</a></li>
             <li>
                 <a href="">Sản phẩm</a>
                 <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -31,6 +31,19 @@
                     <li><a href="">Gaming Gear</a></li>
                     <li><a href="">Linh phụ kiện</a></li>
                     <li><a href="">Thiết bị mạng</a></li>
+                    {{-- @foreach ($lstCate as $cate)
+                        <li>
+                            <a href="">{{ $cate['type'] }}</a>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            <ul class="drop3">
+                                @foreach ($lstName as $name)
+                                    @if($cate['id'] == $name['id_type'])
+                                        <li><a href="">{{ $name['name_cate'] }}</a></li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endforeach --}}
                 </ul>
             </li>
             <li><a href="">Giới thiệu</a></li>

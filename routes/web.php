@@ -20,8 +20,10 @@ Route::group([
     'as' => 'user.',
     'namespace' => 'Home'
 ], function () {
-    Route::get('/homepage','HomeController@home')->name('home');
-    Route::get('/detailProduct/{id}','ProductController@detail')->name('detailProduct');
+    Route::get('homepage','HomeController@home')->name('home');
+    Route::get('detailProduct/{id}','ProductController@detail')->name('detailProduct');
+    Route::get('listproduct/{idtype}','ProductController@listproduct')->name('listproduct');
+    Route::get('userpage','UserpageController@userpage')->name('userpage');
 });
 Route::group([
     'prefix' => 'admin',
@@ -42,9 +44,10 @@ Route::group([
     'namespace' => 'Admin',
     'middleware' => ['web', 'check.admin.login']
 ], function(){
-    Route::get('/dashboard','DashboardController@index')->name('dashboard');
-    Route::get('/posts','PostsController@index')->name('posts');
-    Route::get('/create-post', 'PostsController@createPost')->name('createPost');
-    Route::get('/category','CategoriesController@index')->name('category');
-    Route::get('/tag','TagsController@index')->name('tag');
+    Route::get('dashboard','DashboardController@dashboard')->name('dashboard');
+    Route::get('posts','PostsController@index')->name('posts');
+    Route::get('create-post', 'PostsController@createPost')->name('createPost');
+    Route::get('category','CategoriesController@index')->name('category');
+    Route::get('tag','TagsController@index')->name('tag');
+    Route::get('account','AccountController@index')->name('account');
 });

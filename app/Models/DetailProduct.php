@@ -12,7 +12,7 @@ class DetailProduct extends Model
     public function getDataProductById($id)
     {
         $data = DB::table('detail_product AS dp')
-                    ->select('dp.*','p.price','p.percent','p.promo_price','p.image','p.name','s.*','t.type','tt.name_type')
+                    ->select('dp.*','p.price','p.percent','p.promo_price','p.image','p.name','s.*','t.type','tt.name_type','t.id AS id_typepr')
                     ->join('product AS p','p.id','=','dp.id_product')
                     ->join('specification AS s','s.id','=','dp.id_specification')
                     ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
