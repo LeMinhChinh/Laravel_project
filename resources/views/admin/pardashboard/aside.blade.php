@@ -25,4 +25,9 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Users</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('user.home') }}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Back home</span></a>
+    </li>
 </ul>

@@ -17,4 +17,9 @@ class ProductAdminController extends Controller
         $data['lstProduct'] = $lstProduct;
         return view('admin.product.product',$data);
     }
+
+    public function createProduct()
+    {
+        return view('admin.product.create');
+    }
 }

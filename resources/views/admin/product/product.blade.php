@@ -10,7 +10,7 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <a href="" class="btn btn-primary">Create New Product</a>
+                <a href="{{ route('admin.createProduct') }}" class="btn btn-primary">Create New Product</a>
                 <a href="" class="btn btn-primary">View All</a>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
