@@ -12,7 +12,12 @@ class Product extends Model
     public function getAllData()
     {
         $data = DB::table('product AS p')
-                    ->select('p.*')
+                    ->select('p.*','dp.quantity','tp.type','tm.name_trade','tp.id AS id_type','tm.name_trade')
+                    ->join('detail_product AS dp','dp.id_product','=','p.id')
+                    ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
+                    ->join('type_product AS tp','tp.id','=','tt.id_type')
+                    ->join('trademark AS tm','tm.id','=','tt.id_trade')
+                    ->orderBy('p.price','DESC')
                     ->get();
         return $data;
     }

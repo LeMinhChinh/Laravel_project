@@ -45,7 +45,7 @@
                                         <td style="font-weight:bolder;font-size:25px;color:red">{{ number_format($detailPr['promo_price'] ,0 ,'.' ,'.').'' }}&#8363;</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" style="width:35%;height:50px;text-align:center">Giảm giá tới {{ $detailPr['percent'] }}%</td>
+                                        <td colspan="2" style="width:35%;height:50px;text-align:center;color:red;font-weight:bolder">Giảm giá tới {{ $detailPr['percent'] }}%</td>
                                     </tr>
                                     </tbody>
                                 </table>

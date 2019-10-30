@@ -9,6 +9,14 @@ class User extends Model
 {
     protected $table = 'account';
 
+    public function getAllData()
+    {
+        $data = DB::table('account AS a')
+                    ->select('a.*')
+                    ->get();
+        return $data;
+    }
+
     public function checkUserLogin($user, $pass)
     {
         $data = [];

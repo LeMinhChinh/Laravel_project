@@ -45,9 +45,9 @@ Route::group([
     'middleware' => ['web', 'check.admin.login']
 ], function(){
     Route::get('dashboard','DashboardController@dashboard')->name('dashboard');
-    Route::get('posts','PostsController@index')->name('posts');
-    Route::get('create-post', 'PostsController@createPost')->name('createPost');
-    Route::get('category','CategoriesController@index')->name('category');
-    Route::get('tag','TagsController@index')->name('tag');
-    Route::get('account','AccountController@index')->name('account');
+    Route::get('product-admin','ProductAdminController@product')->name('product');
+    Route::get('create-product', 'ProductAdminController@createPost')->name('createProduct');
+    Route::get('bill','BillController@index')->name('bill');
+    Route::get('news','NewsController@index')->name('news');
+    Route::get('account','AccountController@account')->name('account');
 });

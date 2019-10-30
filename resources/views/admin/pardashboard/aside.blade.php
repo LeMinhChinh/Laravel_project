@@ -6,19 +6,19 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.posts') }}">
+        <a class="nav-link" href="{{ route('admin.product') }}">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>Posts</span></a>
+        <span>Product</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.category') }}">
+        <a class="nav-link" href="{{ route('admin.bill') }}">
         <i class="fas fa-fw fa-table"></i>
-        <span>Categories</span></a>
+        <span>Bill Order</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.tag') }}">
+        <a class="nav-link" href="{{ route('admin.news') }}">
         <i class="fas fa-fw fa-table"></i>
-        <span>Tags</span></a>
+        <span>News</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.account') }}">
