@@ -46,7 +46,11 @@ Route::group([
 ], function(){
     Route::get('dashboard','DashboardController@dashboard')->name('dashboard');
     Route::get('product-admin','ProductAdminController@product')->name('product');
+    Route::get('laptop-admin','ProductAdminController@listLaptop')->name('listLaptop');
+    Route::get('pc-admin','ProductAdminController@listpc')->name('listpc');
     Route::get('create-product', 'ProductAdminController@createProduct')->name('createProduct');
+    Route::post('handle-create-product', 'ProductAdminController@handleCreateProduct')->name('handleCreateProduct');
+    Route::post('delete-product','ProductAdminController@deleteProduct')->name('deleteProduct');
     Route::get('bill','BillController@index')->name('bill');
     Route::get('news','NewsController@index')->name('news');
     Route::get('account','AccountController@account')->name('account');

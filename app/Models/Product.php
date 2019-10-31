@@ -9,7 +9,7 @@ class Product extends Model
 {
     protected $table = 'product';
 
-    public function getAllData()
+    public function getAllData($keyword = '')
     {
         $data = DB::table('product AS p')
                     ->select('p.*','dp.quantity','tp.type','tm.name_trade','tp.id AS id_type','tm.name_trade')
@@ -17,8 +17,9 @@ class Product extends Model
                     ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
                     ->join('type_product AS tp','tp.id','=','tt.id_type')
                     ->join('trademark AS tm','tm.id','=','tt.id_trade')
-                    ->orderBy('p.price','DESC')
-                    ->get();
+                    ->orderBy('p.id','ASC')
+                    ->where('p.name', 'like', '%'.$keyword.'%')
+                    ->paginate(15);
         return $data;
     }
 
@@ -65,8 +66,53 @@ class Product extends Model
                     ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
                     ->join('type_product AS tp','tp.id','=','tt.id_type')
                     ->where('tp.id',$idtype)
-                    // ->paginate(12);
-                    ->get();
+                    ->paginate(12);
         return $data;
+    }
+
+    public function getAllLaptopAdmin($keyword = '')
+    {
+        $data = DB::table('product AS p')
+                    ->select('p.*','tt.id_type','tm.name_trade','dp.quantity')
+                    ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
+                    ->join('type_product AS tp','tp.id','=','tt.id_type')
+                    ->join('trademark AS tm','tm.id','=','tt.id_trade')
+                    ->join('detail_product AS dp','dp.id_product','=','p.id')
+                    ->where('p.name', 'like', '%'.$keyword.'%')
+                    ->where('tt.id_type',1)
+                    ->orderBy('p.id','ASC')
+                    ->paginate(15);
+        return $data;
+    }
+
+    public function getAllPcAdmin($keyword = '')
+    {
+        $data = DB::table('product AS p')
+                    ->select('p.*','tt.id_type','tm.name_trade','dp.quantity')
+                    ->join('type_trade AS tt','tt.id','=','p.id_typetrade')
+                    ->join('type_product AS tp','tp.id','=','tt.id_type')
+                    ->join('trademark AS tm','tm.id','=','tt.id_trade')
+                    ->join('detail_product AS dp','dp.id_product','=','p.id')
+                    ->where('tt.id_type',2)
+                    ->where('p.name', 'like', '%'.$keyword.'%')
+                    ->orderBy('p.id','ASC')
+                    ->paginate(15);
+        return $data;
+    }
+
+    public function insertProduct($data)
+    {
+        DB::table('product')->insert($data);
+        // Lấy ra id vừa insert
+        $id = DB::getPdo()->lastInsertId();
+        return $id;
+    }
+
+    public function deleteProduct($id)
+    {
+        $delete = DB::table('product')
+                    ->where('id', $id)
+                    ->delete();
+        return $del;
     }
 }

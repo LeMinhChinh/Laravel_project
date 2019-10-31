@@ -9,6 +9,14 @@ class DetailProduct extends Model
 {
     protected $table = 'detail_product';
 
+    public function getAllData()
+    {
+        $data = DB::table('detail_product AS dp')
+                    ->select('dp.*')
+                    ->get();
+        return $data;
+    }
+
     public function getDataProductById($id)
     {
         $data = DB::table('detail_product AS dp')
@@ -20,5 +28,14 @@ class DetailProduct extends Model
                     ->where('dp.id',$id)
                     ->first();
         return $data;
+    }
+
+    public function insertProductDetail($data)
+    {
+        $insert = DB::table('detail_product')->insert($data);
+    	if($insert){
+    		return true;
+    	}
+    	return false;
     }
 }

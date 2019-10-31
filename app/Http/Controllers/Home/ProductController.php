@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\DetailProduct;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -23,18 +24,21 @@ class ProductController extends Controller
     {
         if($idtype == 1){
             $listlaptop = $product->getAllProductByIdType($idtype);
+            $data['paginate'] = $listlaptop;
             $listlaptop = json_decode(json_encode($listlaptop),true);
+            $data['listlaptop'] = $listlaptop['data'] ?? [];
+            $laptop = Category::find($idtype);
 
-            // $data['paginate'] = $listPr;
-            // $listPr = json_decode(json_encode($listPr),true);
+            $data['laptop'] = $laptop;
 
-            $data['listlaptop'] = $listlaptop;
-            // dd($listlaptop);
             return view('home.product.listlaptop',$data);
         }elseif($idtype ==2){
             $listpc = $product->getAllProductByIdType($idtype);
             $listpc = json_decode(json_encode($listpc),true);
 
+            $pc = Category::find($idtype);
+
+            $data['pc'] = $pc;
             $data['listpc'] = $listpc;
             // dd($listpc);
             return view('home.product.listpc',$data);

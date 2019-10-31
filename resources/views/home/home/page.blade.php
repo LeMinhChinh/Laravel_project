@@ -59,9 +59,9 @@
                                     <div class="boxsp">
                                         <div class="imgsp">
                                             @if ($hotPr['id_type'] ==1)
-                                                <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Image/product/laptop/{{ $hotPr['image'] }}" style="height:190px"></a>
+                                                <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Uploads/images/{{ $hotPr['image'] }}" style="height:190px"></a>
                                             @elseif($hotPr['id_type'] ==2)
-                                                <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Image/product/pc/{{ $hotPr['image'] }}" style="height:190px"></a>
+                                                <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Uploads/images/{{ $hotPr['image'] }}" style="height:190px"></a>
                                             @endif
                                             <div class="img-label">
                                                 <img src="../home/images/new.png">
@@ -111,7 +111,7 @@
                         <div class="col-xs-6 col-sm-4 col-md-3 p5" style="margin-top:20px">
                             <div class="boxsp">
                                 <div class="imgsp">
-                                    <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Image/product/laptop/{{ $laptop['image'] }}" style="height:190px"></a>
+                                    <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Uploads/images/{{ $laptop['image'] }}" style="height:190px"></a>
                                     {{-- <div class="img-label">
                                         <img src="home/images/hot.png">
                                     </div> --}}
@@ -166,7 +166,7 @@
                         <div class="col-xs-6 col-sm-4 col-md-3 p5" style="margin-top:20px">
                             <div class="boxsp">
                                 <div class="imgsp">
-                                    <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Image/product/pc/{{ $pc['image'] }}" style="height:190px"></a>
+                                    <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Uploads/images/{{ $pc['image'] }}" style="height:190px"></a>
                                     {{-- <div class="img-label">
                                         <img src="home/images/hot.png">
                                     </div> --}}

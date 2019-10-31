@@ -7,14 +7,14 @@
             <div class="col-md-10">
                 <div class="boxmain">
                     <div class="tit-boxmain title-detail">
-                            <a href="{{ route('user.home') }}">Trang chủ / </a><a href="" style="color:red">Laptop</a>
+                        <a href="{{ route('user.home') }}">Trang chủ / </a><a href="" style="color:red">{{ $pc->type }}</a>
                     </div>
                     <div class="ct-boxmain row">
                         @foreach ($listpc as $key => $pc)
                             <div class="col-md-4 p5" style="margin-top:20px">
                                 <div class="boxsp">
                                     <div class="imgsp">
-                                        <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Image/product/pc/{{ $pc['image'] }}" style="height:190px"></a>
+                                        <a href=""><img class="imgproduct" src="{{ URL::to('/') }}/Uploads/images/{{ $pc['image'] }}" style="height:190px"></a>
                                         {{-- <div class="img-label">
                                             <img src="home/images/hot.png">
                                         </div> --}}

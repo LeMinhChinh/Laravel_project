@@ -28,7 +28,6 @@ class validateRegister extends FormRequest
             'txtName' => 'required',
             'txtPassword' => 'required|min:8',
             'txtRePassword' => 'required_with:txtPassword|same:txtPassword|min:8',
-
             'txtFName' => 'required',
             'txtPhone' => 'required',
             'txtBirth' => 'required',

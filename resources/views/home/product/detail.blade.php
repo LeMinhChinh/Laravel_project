@@ -11,9 +11,9 @@
 					<div class="preview col-md-6">
 						<div class="preview-pic tab-content">
 						  @if ($detailPr['id_typepr'] == 1)
-                            <div class="tab-pane active" id="pic-1"><img src="{{ URL::to('/') }}/Image/product/laptop/{{ $detailPr['image'] }}" /></div>
+                            <div class="tab-pane active" id="pic-1"><img src="{{ URL::to('/') }}/Uploads/images/{{ $detailPr['image'] }}" /></div>
                           @elseif($detailPr['id_typepr'] == 2)
-                            <div class="tab-pane active" id="pic-1"><img src="{{ URL::to('/') }}/Image/product/pc/{{ $detailPr['image'] }}" /></div>
+                            <div class="tab-pane active" id="pic-1"><img src="{{ URL::to('/') }}/Uploads/images/{{ $detailPr['image'] }}" /></div>
                           @endif
 						</div>
 					</div>
