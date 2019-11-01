@@ -30,7 +30,7 @@
                 <a href="{{ route('admin.product') }}" class="btn btn-primary">View All</a>
             </div>
 
-            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+            {{-- <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                 <div class="dropdown"  style="margin-left:-269px">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                         Filter Product
@@ -42,7 +42,7 @@
                         <li><a href="#" style="text-decoration:none;padding-left:15px">Quantity</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Searching for..." id="js-keyword" value="{{ $keyword }}">
