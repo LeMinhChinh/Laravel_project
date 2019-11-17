@@ -64,7 +64,6 @@ class ProductAdminController extends Controller
     public function createProduct(Request $request,TypeTrade $typetrade, DetailProduct $detail)
     {
         $data = [];
-        // $data['cate'] = $cate->getAllDataCate();
         $typetrade = $typetrade->getAllData();
         $typetrade = \json_decode(\json_encode($typetrade),true);
         $spec = $detail->getAllData();
@@ -91,7 +90,6 @@ class ProductAdminController extends Controller
 
         if($request->hasFile('imgPr')){
             if($request->file('imgPr')->isValid()){
-                // $path = base_path()."/Uploads/images/";
                 $file = $request->file('imgPr');
                 $nameFile = $file->getClientOriginalName();
                 $up = $file->move('Uploads/images',$nameFile);
